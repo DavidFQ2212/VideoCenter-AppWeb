@@ -54,26 +54,55 @@
     <!-- END NAV -->
 
     <div id="playercontainer">
-        <form action="" class="Formulario">
-            <label for="" class="form-item">Nombre de la Pelicula</label>
-            <select name="" id="">
-                <option value=""></option>
-                <option value=""></option>
+        <div class="form-container">
+            <h2>Llena los datos necesaros!!</h2>
+            <form>
+                <label for="titulo">Título:</label>
+                <select name="titulo" id="">
+                    <option value=""></option>
+                </select>
 
-            </select>
-            <label for="" class="form-item">Fecha de la Renta</label>
-            <input type="date" class="form-itemIn">
-            <label for="" class="form-item">Fecha de Devolucion</label>
-            <input type="date" class="form-itemIn">
-            <label for="" class="form-item">Total</label>
-            <select name="" id="">
-                <option value=""></option>
-                <option value=""></option>
-            </select>
+                <label for="genero">N.trabajador</label>
+                <input type="text" id="genero" name="genero">
 
-            <input type="button" value="Reservar">
-        </form>
+                <label for="anio"></label>
+                <input type="text" id="anio" name="anio">
 
+                <label for="prestamo">Prestamo:</label>
+                <input type="date" id="prestamo" name="prestamo">
+
+                <label for="devolucion">Devolucion</label>
+                <input type="date" id="devolucion" name="devolucioon">
+
+                <label for="Total">Total</label>
+                <select name="total" id="total">
+                    <option value="">75</option>
+                    <option value="">120</option>
+                </select>
+                <input type="submit" value="Alquilar">
+            </form>
+        </div>
+
+        <div class="table-container">
+            <h2>Películas Disponibles</h2>
+            <table border="1">
+                <tr>
+                    <th>Título</th>
+                    <th>Género</th>
+                    <th>Año</th>
+                    <th>Director</th>
+                    <th>Precio</th>
+                </tr>
+                <tr>
+                    <td>Nombre de la película</td>
+                    <td>Género de la película</td>
+                    <td>Año de lanzamiento</td>
+                    <td>Director de la película</td>
+                    <td>Precio de alquiler</td>
+                </tr>
+                <!-- Puedes agregar más filas de datos aquí -->
+            </table>
+        </div>
     </div>
 
     <!-- FOOTER SECTION -->
