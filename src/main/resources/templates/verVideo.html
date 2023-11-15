@@ -55,38 +55,42 @@
 
     <div id="playercontainer">
         <div class="form-container">
-            <h2>Llena los datos necesaros!!</h2>
+            <h2>¡¡Reserve ahora!!</h2>
             <form>
-                <label for="titulo">Título:</label>
-                <select name="titulo" id="">
-                    <option value=""></option>
+
+                <label for="titulo" class="form-label">Título:</label>
+                <select name="titulo" id="" class="form-itemsIn">
+                    <option value="">pelicula 1</option>
                 </select>
 
-                <label for="genero">N.trabajador</label>
-                <input type="text" id="genero" name="genero">
+                <label for="numtrabajador" class="form-label">N.trabajador</label>
+                <select name="" id="" class="form-itemsIn">
+                    <option value="" class="form-itemsIn">N22212</option>
+                </select>
 
-                <label for="anio"></label>
-                <input type="text" id="anio" name="anio">
 
-                <label for="prestamo">Prestamo:</label>
-                <input type="date" id="prestamo" name="prestamo">
+                <label for="prestamo" class="form-label">Prestamo:</label>
+                <input type="date" id="prestamo" name="prestamo" class="form-itemsIn">
 
-                <label for="devolucion">Devolucion</label>
-                <input type="date" id="devolucion" name="devolucioon">
+                <label for="devolucion" class="form-label">Devolucion</label>
+                <input type="date" id="devolucion" name="devolucioon" class="form-itemsIn">
 
-                <label for="Total">Total</label>
-                <select name="total" id="total">
+                <label for="Total" class="form-label">Total</label>
+                <select name="total" id="total" class="form-itemsIn">
                     <option value="">75</option>
                     <option value="">120</option>
                 </select>
-                <input type="submit" value="Alquilar">
+
+                <input type="submit" value="Alquilar" class="form-itemsIn" id="">
+
             </form>
         </div>
 
         <div class="table-container">
-            <h2>Películas Disponibles</h2>
+            <h2>Pedidos</h2>
             <table border="1">
                 <tr>
+                    <th>Numero de pedido</th>
                     <th>Título</th>
                     <th>Género</th>
                     <th>Año</th>
@@ -94,6 +98,7 @@
                     <th>Precio</th>
                 </tr>
                 <tr>
+                    <td>num pedido</td>
                     <td>Nombre de la película</td>
                     <td>Género de la película</td>
                     <td>Año de lanzamiento</td>
