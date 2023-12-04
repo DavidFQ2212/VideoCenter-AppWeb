@@ -36,4 +36,8 @@ public class Controlador {
         return "verVideo";
     }
 
+    @GetMapping("/trabajadores")
+    public String Trabajadores() {
+        return "Trabajadres";
+    }
 }

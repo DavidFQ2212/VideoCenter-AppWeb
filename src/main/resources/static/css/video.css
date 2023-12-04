@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display&display=swap');
+
 html,
 body {
 	position: flex;
@@ -27,6 +30,7 @@ body {
 
 
 .form-container {
+	font-family: 'Playfair Display', serif;
 	border: solid 2px 2px red;
 	text-align: center;
 
@@ -34,12 +38,13 @@ body {
 }
 
 .form-label {
-
+	font-family: 'Playfair Display', serif;
 	display: block;
 	font-size: 35px;
 }
 
 .form-itemsIn {
+	font-family: 'Playfair Display', serif;
 	font-size: 15PX;
 	border: solid 2px red;
 	background-color: transparent;
@@ -52,6 +57,7 @@ body {
 
 
 .form-itemsIn:hover {
+	font-family: 'Playfair Display', serif;
 	background-color: red;
 	box-shadow: 1px 1px 20px rgb(250, 36, 47);
 }
@@ -59,14 +65,31 @@ body {
 
 
 .table-container {
+	font-family: 'Bebas Neue', sans-serif;
 	width: 100%;
 	font-size: 15px;
 	text-align: center;
 
 }
 
-th,
+table {
+	font-family: 'Bebas Neue', sans-serif;
+	padding: 5px;
+	border: 0px solid;
+	width: 100%;
+
+}
+
+th {
+	color: black;
+	border: 1px solid white;
+	padding: 5px;
+	background-color: red;
+}
+
 td {
+
+	border: 1px solid white;
 	padding: 5px;
 	font-size: 100%;
 }
