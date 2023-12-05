@@ -4,7 +4,7 @@
  */
 package com.mx.demo.Service;
 
-import Dao.UsuariosDao;
+import com.mx.demo.Dao.UsuariosDao;
 import com.mx.demo.Dominio.Roles;
 import com.mx.demo.Dominio.Usuarios;
 import java.util.List;
