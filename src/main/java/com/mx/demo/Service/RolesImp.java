@@ -4,7 +4,7 @@
  */
 package com.mx.demo.Service;
 
-import Dao.RolesDao;
+import com.mx.demo.Dao.RolesDao;
 import com.mx.demo.Dominio.Roles;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

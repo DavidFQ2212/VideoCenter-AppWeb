@@ -4,15 +4,13 @@
  */
 package com.mx.demo.Dao;
 
-
 import com.mx.demo.Dominio.Usuarios;
 import org.springframework.data.repository.CrudRepository;
-
 
 /**
  *
  * @author david
  */
-public interface UsuariosDao extends CrudRepository<Usuarios,Long>{
+public interface UsuariosDao extends CrudRepository<Usuarios, Long>{
     
 }

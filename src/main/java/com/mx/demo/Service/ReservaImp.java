@@ -4,7 +4,7 @@
  */
 package com.mx.demo.Service;
 
-import Dao.ReservasDao;
+import com.mx.demo.Dao.ReservasDao;
 import com.mx.demo.Dominio.Reserva;
 
 import java.util.List;

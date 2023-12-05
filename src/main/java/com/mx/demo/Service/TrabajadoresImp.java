@@ -4,8 +4,8 @@
  */
 package com.mx.demo.Service;
 
-import Dao.ReservasDao;
-import Dao.TrabajadoresDao;
+
+import com.mx.demo.Dao.TrabajadoresDao;
 import com.mx.demo.Dominio.Trabajadores;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
