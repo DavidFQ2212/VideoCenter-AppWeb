@@ -8,17 +8,16 @@ import jakarta.persistence.Table;
 import java.io.Serializable;
 import lombok.Data;
 
-
 @Data
 @Entity
 @Table(name = "roles")
-public class Roles implements Serializable{
-    
-    private static final long serialVersionUID=1L;
+public class Roles implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long  idrol;
+    private Long idRol;
     private String roleName;
     private int usuarioId;
-    
+
 }

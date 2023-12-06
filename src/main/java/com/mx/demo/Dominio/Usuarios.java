@@ -8,17 +8,16 @@ import jakarta.persistence.Table;
 import java.io.Serializable;
 import lombok.Data;
 
-
 @Data
 @Entity
 @Table(name = "usuarios")
-public class Usuarios implements Serializable{
-    private static final long serialVersionUID=1L;
+public class Usuarios implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long  idusuario;
+    private Long idUsuario;
     private String nombre;
-    private String Apellidos;
-    private String Correo;
+    private String apellidos;
+    private String correo;
     private String contraseña;
 }

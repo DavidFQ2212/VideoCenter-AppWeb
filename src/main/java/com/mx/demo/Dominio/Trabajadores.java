@@ -11,11 +11,11 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "personal")
-public class Trabajadores implements Serializable{
-    private static final long serialVersionUID=1L;
+public class Trabajadores implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idpersonal;
+    private Long idPersonal;
     private String nombre;
     private String apellidos;
     private String rfc;

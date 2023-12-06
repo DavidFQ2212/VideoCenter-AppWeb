@@ -11,13 +11,13 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "reservas")
-public class Reserva implements Serializable{
-    private static final long serialVersionUID=1L;
+public class Reserva implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idreserva;
+    private Long idReserva;
     private String titulo;
-    private  int idPersonal;
+    private int idPersonal;
     private String fechaPrestamo;
     private String fechaDevolucion;
     private int precio;

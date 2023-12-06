@@ -56,7 +56,7 @@
     <div id="playercontainer">
         <div class="form-container">
             <h2>Trabajadores</h2>
-            <form>
+            <form th:action="@{/GuardarReserva}" method="post" th:object="${reserva}">
 
                 <label for="numtrabajador" class="form-label">Numero de rabajador</label>
                 <input type="text" id="numtrabajador" name="numtrabajador" class="form-itemsIn">
