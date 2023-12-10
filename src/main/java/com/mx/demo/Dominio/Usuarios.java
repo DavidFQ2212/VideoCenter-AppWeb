@@ -15,9 +15,9 @@ public class Usuarios implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idUsuario;
+    private Long idsuario;
     private String nombre;
     private String apellidos;
     private String correo;
-    private String contraseña;
+    private String contrasena;
 }

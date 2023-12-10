@@ -1,11 +1,23 @@
 package com.mx.demo.Controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.mx.demo.Dao.TrabajadoresDao;
+import com.mx.demo.Dominio.Reserva;
+import com.mx.demo.Service.ResevasService;
+import com.mx.demo.Service.TrabajadoresServiece;
 
 @Controller
 
 public class Controlador {
+    @Autowired
+    private ResevasService reservaS;
+    private TrabajadoresServiece trabajadoresS;
+
     @GetMapping("/")
     public String Home() {
         return "index";
@@ -31,13 +43,47 @@ public class Controlador {
         return "series";
     }
 
+    /* ReservasEndpoint */
     @GetMapping("/verVideo")
-    public String PageReservar() {
+    public String PageReservar(Reserva reserva, Model model) {
+        var reservas = reservaS.listarReservas();
+        model.addAttribute("reservas", reservas);
         return "verVideo";
     }
 
+    @PostMapping("/GuardarReserva")
+    public String GuardarReserva(Reserva reservas) {
+        reservaS.guardar(reservas);
+        return "redirect:/verVideo";
+    }
+
+    public String EliminarReserva() {
+        return "";
+    }
+
+    public String ModificarReserva() {
+        return "";
+    }
+
+    /* Trabajadores Endpoint */
     @GetMapping("/trabajadores")
-    public String Trabajadores() {
+    public String Trabajadores(TrabajadoresDao trabajadores, Model model) {
+        var trabajador = trabajadoresS.listarPersonal();
+        model.addAttribute("Persoal", trabajador);
         return "Trabajadres";
+    }
+
+    public String GuardarTrabajador() {
+        return "";
+
+    }
+
+    public String EliminarTrabajador() {
+        return "";
+
+    }
+
+    public String ModificarTrabajador() {
+        return "";
     }
 }

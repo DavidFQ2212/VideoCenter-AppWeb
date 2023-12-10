@@ -56,29 +56,33 @@
     <div id="playercontainer">
         <div class="form-container">
             <h2>¡¡Reserve ahora!!</h2>
-            <form>
+            <form th:action="@{/GuardarReserva}" method="post" th:object="${reserva}">
+
+                <input name="idreserva" id="idreserva" type="hidden" th:field="*{idreservas}">
 
                 <label for="titulo" class="form-label">Título:</label>
-                <select name="titulo" id="" class="form-itemsIn">
-                    <option value="">pelicula 1</option>
+                <select name="titulo" id="titlo" class="form-itemsIn" th:field="*{titulo}">
+                    <option value="PElicula1">pelicula 1</option>
                 </select>
 
                 <label for="numtrabajador" class="form-label">N.trabajador</label>
-                <select name="" id="" class="form-itemsIn">
-                    <option value="" class="form-itemsIn">N22212</option>
+                <select name="idpersonal" id="idpersonal" class="form-itemsIn" th:field="*{idpersonal}">
+                    <option value="1" class="form-itemsIn">asdasda</option>
                 </select>
 
 
                 <label for="prestamo" class="form-label">Prestamo:</label>
-                <input type="date" id="prestamo" name="prestamo" class="form-itemsIn">
+                <input type="date" id="fechaprestamo" name="fechaprestamo" class="form-itemsIn"
+                    th:field="*{fechaprestamo}">
 
                 <label for="devolucion" class="form-label">Devolucion</label>
-                <input type="date" id="devolucion" name="devolucioon" class="form-itemsIn">
+                <input type="date" id="fechadevolucion" name="fechadevolucion" class="form-itemsIn"
+                    th:field="*{fechadevolucion}">
 
                 <label for="Total" class="form-label">Total</label>
-                <select name="total" id="total" class="form-itemsIn">
-                    <option value="">75</option>
-                    <option value="">120</option>
+                <select name="total" id="total" class="form-itemsIn" th:field="*{precio}">
+                    <option value="75">75</option>
+                    <option value="120">120</option>
                 </select>
 
                 <input type="submit" value="Alquilar" class="form-itemsIn" id="">
@@ -86,24 +90,28 @@
             </form>
         </div>
 
-        <div class="table-container">
+        <div class="table-container" th:if="${reservas != null and !reservas.empty}">
             <h2>Pedidos</h2>
             <table border="1">
                 <tr>
                     <th>Numero de pedido</th>
                     <th>Título</th>
-                    <th>Género</th>
-                    <th>Año</th>
-                    <th>Director</th>
-                    <th>Precio</th>
+                    <th>Personal</th>
+                    <th>Fecha de prestamo</th>
+                    <th>Fecha Devlucin</th>
+                    <th>precio</th>
+                    <th>Borrar</th>
+                    <th>Editar</th>
                 </tr>
-                <tr>
-                    <td>num pedido</td>
-                    <td>Nombre de la película</td>
-                    <td>Género de la película</td>
-                    <td>Año de lanzamiento</td>
-                    <td>Director de la película</td>
-                    <td>Precio de alquiler</td>
+                <tr th:each="reserva : ${reservas}">
+                    <td th:text="${reserva.idreservas}"></td>
+                    <td th:text="${reserva.titulo}"></td>
+                    <td th:text="${reserva.idpersonal}"></td>
+                    <td th:text="${reserva.fechaprestamo}"></td>
+                    <td th:text="${reserva.fechadevolucion}"></td>
+                    <td th:text="${reserva.precio}"></td>
+                    <td><a th:href="@{/}">Eliminar</a></td>
+                    <td><a th:href="@{/}">Editar</a></td>
                 </tr>
                 <!-- Puedes agregar más filas de datos aquí -->
             </table>

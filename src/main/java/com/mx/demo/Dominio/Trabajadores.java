@@ -15,10 +15,10 @@ public class Trabajadores implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPersonal;
+    private Long idpersonal;
     private String nombre;
     private String apellidos;
     private String rfc;
-    private String fechaIngreso;
+    private String fechaingreso;
 
 }

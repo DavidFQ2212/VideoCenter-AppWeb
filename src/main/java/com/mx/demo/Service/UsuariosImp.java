@@ -14,28 +14,29 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author david
  */
-public class UsuariosImp implements UsuariosService{
+public class UsuariosImp implements UsuariosService {
     @Autowired
     private UsuariosDao usuariosDao;
+
     @Override
     @Transactional
     public List<Usuarios> listarUsuarios() {
-       return (List<Usuarios>)usuariosDao.findAll();
+        return (List<Usuarios>) usuariosDao.findAll();
     }
 
     @Override
     @Transactional
     public void guardar(Usuarios usuario) {
-    usuariosDao.save(usuario);
+        usuariosDao.save(usuario);
     }
 
     @Override
     public void eliminar(Usuarios usuario) {
-        }
+    }
 
     @Override
     public Usuarios encontrarUsuarios(Usuarios usuario) {
-         return usuariosDao.findById(usuario.getIdusuario()).orElse(null);
+        return usuariosDao.findById(usuario.getIdsuario()).orElse(null);
     }
-    
+
 }

@@ -16,8 +16,8 @@ public class Roles implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idRol;
-    private String roleName;
-    private int usuarioId;
+    private Long idrol;
+    private String rolename;
+    private int usuarioid;
 
 }

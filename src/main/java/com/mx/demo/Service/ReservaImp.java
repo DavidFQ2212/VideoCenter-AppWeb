@@ -17,19 +17,20 @@ import org.springframework.transaction.annotation.Transactional;
  * @author david
  */
 @Service
-public class ReservaImp implements ResevasService{
+public class ReservaImp implements ResevasService {
     @Autowired
     private ReservasDao reservaDao;
+
     @Override
     @Transactional()
     public List<Reserva> listarReservas() {
-        return(List<Reserva>) reservaDao.findAll();
-       }
+        return (List<Reserva>) reservaDao.findAll();
+    }
 
     @Override
     @Transactional
     public void guardar(Reserva reserva) {
-    reservaDao.save(reserva);
+        reservaDao.save(reserva);
     }
 
     @Override
@@ -40,7 +41,7 @@ public class ReservaImp implements ResevasService{
     @Override
     @Transactional(readOnly = true)
     public Reserva encontrarReserva(Reserva reserva) {
-    return reservaDao.findById(reserva.getIdreserva()).orElse(null);
+        return reservaDao.findById(reserva.getIdreservas()).orElse(null);
     }
- 
+
 }

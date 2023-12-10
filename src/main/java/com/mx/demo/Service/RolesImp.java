@@ -14,13 +14,14 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author david
  */
-public class RolesImp implements RolesService{
+public class RolesImp implements RolesService {
     @Autowired
     private RolesDao rolesDao;
+
     @Override
     @Transactional
     public List<Roles> listarRoles() {
-    return (List<Roles>)rolesDao.findAll();
+        return (List<Roles>) rolesDao.findAll();
     }
 
     @Override
@@ -31,13 +32,13 @@ public class RolesImp implements RolesService{
 
     @Override
     public void eliminar(Roles rol) {
-     rolesDao.delete(rol);
+        rolesDao.delete(rol);
     }
 
     @Override
     @Transactional(readOnly = true)
     public Roles encontrarRoles(Roles reserva) {
-    return rolesDao.findById(reserva.getIdrol()).orElse(null);
+        return rolesDao.findById(reserva.getIdrol()).orElse(null);
     }
-    
+
 }

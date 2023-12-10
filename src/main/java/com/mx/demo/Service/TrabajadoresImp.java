@@ -4,7 +4,6 @@
  */
 package com.mx.demo.Service;
 
-
 import com.mx.demo.Dao.TrabajadoresDao;
 import com.mx.demo.Dominio.Trabajadores;
 import java.util.List;
@@ -15,30 +14,31 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author david
  */
-public class TrabajadoresImp implements TrabajadoresServiece{
+public class TrabajadoresImp implements TrabajadoresServiece {
   @Autowired
-    private TrabajadoresDao trabajadoresDao;
-    @Override
-    @Transactional
-    public List<Trabajadores> listarPersonal() {
-      return (List<Trabajadores>)trabajadoresDao.findAll();
-    }
+  private TrabajadoresDao trabajadoresDao;
 
-    @Override
-    @Transactional
-    public void guardar(Trabajadores trabajador) {
-        trabajadoresDao.save(trabajador);
-    }
+  @Override
+  @Transactional
+  public List<Trabajadores> listarPersonal() {
+    return (List<Trabajadores>) trabajadoresDao.findAll();
+  }
 
-    @Override
-    public void eliminar(Trabajadores trabajador) {
-        trabajadoresDao.delete(trabajador);
-    }
+  @Override
+  @Transactional
+  public void guardar(Trabajadores trabajador) {
+    trabajadoresDao.save(trabajador);
+  }
 
-    @Override
-    @Transactional(readOnly = true)
-    public Trabajadores encontrarPersonal(Trabajadores trabajador) {
-        return trabajadoresDao.findById(trabajador.getIdpersonal()).orElse(null);
-    }
-    
+  @Override
+  public void eliminar(Trabajadores trabajador) {
+    trabajadoresDao.delete(trabajador);
+  }
+
+  @Override
+  @Transactional(readOnly = true)
+  public Trabajadores encontrarPersonal(Trabajadores trabajador) {
+    return trabajadoresDao.findById(trabajador.getIdpersonal()).orElse(null);
+  }
+
 }
