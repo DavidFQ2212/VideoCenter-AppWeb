@@ -8,19 +8,21 @@ import com.mx.demo.Dao.TrabajadoresDao;
 import com.mx.demo.Dominio.Trabajadores;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author david
  */
+@Service
 public class TrabajadoresImp implements TrabajadoresServiece {
   @Autowired
   private TrabajadoresDao trabajadoresDao;
 
   @Override
-  @Transactional
-  public List<Trabajadores> listarPersonal() {
+  @Transactional(readOnly = true)
+  public List<Trabajadores> listaTrabajadores() {
     return (List<Trabajadores>) trabajadoresDao.findAll();
   }
 
@@ -37,7 +39,7 @@ public class TrabajadoresImp implements TrabajadoresServiece {
 
   @Override
   @Transactional(readOnly = true)
-  public Trabajadores encontrarPersonal(Trabajadores trabajador) {
+  public Trabajadores encontrarTrabajadores(Trabajadores trabajador) {
     return trabajadoresDao.findById(trabajador.getIdpersonal()).orElse(null);
   }
 

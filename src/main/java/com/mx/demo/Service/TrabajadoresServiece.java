@@ -4,7 +4,6 @@
  */
 package com.mx.demo.Service;
 
-
 import com.mx.demo.Dominio.Trabajadores;
 import java.util.List;
 
@@ -13,8 +12,11 @@ import java.util.List;
  * @author david
  */
 public interface TrabajadoresServiece {
-    public List<Trabajadores> listarPersonal();
+    public List<Trabajadores> listaTrabajadores();
+
     public void guardar(Trabajadores trabajador);
+
     public void eliminar(Trabajadores trabajador);
-    public Trabajadores encontrarPersonal(Trabajadores trabajador);
+
+    public Trabajadores encontrarTrabajadores(Trabajadores trabajador);
 }

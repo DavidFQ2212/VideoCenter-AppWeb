@@ -10,15 +10,15 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "personal")
+@Table(name = "trabajadores")
 public class Trabajadores implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idpersonal;
     private String nombre;
-    private String apellidos;
+    private String apellido;
     private String rfc;
-    private String fechaingreso;
+    private String fecha_ingreso;
 
 }

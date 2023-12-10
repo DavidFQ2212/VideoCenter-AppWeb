@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.mx.demo.Dao.TrabajadoresDao;
+import com.mx.demo.Dominio.Trabajadores;
 import com.mx.demo.Dominio.Reserva;
 import com.mx.demo.Service.ResevasService;
 import com.mx.demo.Service.TrabajadoresServiece;
@@ -16,6 +16,7 @@ import com.mx.demo.Service.TrabajadoresServiece;
 public class Controlador {
     @Autowired
     private ResevasService reservaS;
+    @Autowired
     private TrabajadoresServiece trabajadoresS;
 
     @GetMapping("/")
@@ -67,14 +68,16 @@ public class Controlador {
 
     /* Trabajadores Endpoint */
     @GetMapping("/trabajadores")
-    public String Trabajadores(TrabajadoresDao trabajadores, Model model) {
-        var trabajador = trabajadoresS.listarPersonal();
-        model.addAttribute("Persoal", trabajador);
+    public String PagePersonal(Trabajadores personal, Model model) {
+        var empelados = trabajadoresS.listaTrabajadores();
+        model.addAttribute("empleados", empelados);
         return "Trabajadres";
     }
 
-    public String GuardarTrabajador() {
-        return "";
+    @PostMapping("/GardarTrabajador")
+    public String GuardarTrabajador(Trabajadores trabajador) {
+        trabajadoresS.guardar(trabajador);
+        return "redirect:/trabajadores";
 
     }
 

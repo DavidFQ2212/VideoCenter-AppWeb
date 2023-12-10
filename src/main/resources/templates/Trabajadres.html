@@ -56,20 +56,20 @@
     <div id="playercontainer">
         <div class="form-container">
             <h2>Trabajadores</h2>
-            <form th:action="@{/GuardarReserva}" method="post" th:object="${reserva}">
-                <input type="hidden" name="" id="">
+            <form th:action="@{/GardarTrabajador}" method="post" th:object="${trabajadores}">
 
-                <label for="numtrabajador" class="form-label">Numero de rabajador</label>
-                <input type="text" id="numtrabajador" name="numtrabajador" class="form-itemsIn">
-
+                <input type="hidden" name="idpersonal" id="idpersonal" th:field="*{idpersonal}">
                 <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" id="nombre" name="nombre" class="form-itemsIn">
+                <input type="text" id="nombre" name="nombre" class="form-itemsIn" th:field="*{nombre}">
 
                 <label for="apellido" class="form-label">Apellido</label>
-                <input type="text" id="apellido" name="apellido" class="form-itemsIn">
+                <input type="text" id="apellido" name="apellido" class="form-itemsIn" th:field="*{apellido}">
 
                 <label for="rfc" class="form-label">RFC</label>
-                <input type="text" id="rfc" name="rfc" class="form-itemsIn">
+                <input type="text" id="rfc" name="rfc" class="form-itemsIn" th:field="*{rfc}">
+                <label for="fechaingreso" class="form-label">Fecha de ingreso</label>
+                <input type="date" id="fechaingreso" name="fechaingreso" class="form-itemsIn"
+                    th:field="*{fecha_ingreso}">
 
 
 
@@ -80,19 +80,25 @@
 
         <div class="table-container">
             <h2>Pedidos</h2>
-            <table border="1">
+            <table border="1" th:if="${empleados != null and !empleados.empty}">
                 <tr>
                     <th>NunmeroTrabajador</th>
                     <th>Nombre</th>
                     <th>Apellidos</th>
                     <th>RFC</th>
+                    <th>Fecha de ingreso</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
 
                 </tr>
-                <tr>
-                    <td>num pedido</td>
-                    <td>Nombre de la película</td>
-                    <td>Género de la película</td>
-                    <td>Año de lanzamiento</td>
+                <tr th:each="trabajador : ${empleados}">
+                    <td th:text="${trabajador.idpersonal}"></td>
+                    <td th:text="${trabajador.nombre}"></td>
+                    <td th:text="${trabajador.apellido}"></td>
+                    <td th:text="${trabajador.rfc}"></td>
+                    <td th:text="${trabajador.fecha_ingreso}"></td>
+                    <td><a th:href="@{/}">Eliminar</a></td>
+                    <td><a th:href="@{/}">Editar</a></td>
 
                 </tr>
                 <!-- Puedes agregar más filas de datos aquí -->

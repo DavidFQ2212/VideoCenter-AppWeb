@@ -11,6 +11,6 @@ import org.springframework.data.repository.CrudRepository;
  *
  * @author david
  */
-public interface TrabajadoresDao extends CrudRepository<Trabajadores, Long>{
-    
+public interface TrabajadoresDao extends CrudRepository<Trabajadores, Long> {
+
 }

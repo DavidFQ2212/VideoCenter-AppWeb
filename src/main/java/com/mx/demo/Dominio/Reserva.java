@@ -7,7 +7,6 @@ import jakarta.persistence.Id;
 
 import jakarta.persistence.Table;
 import java.io.Serializable;
-import java.util.Date;
 
 import lombok.Data;
 
