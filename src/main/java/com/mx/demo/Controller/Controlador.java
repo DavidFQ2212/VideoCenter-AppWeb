@@ -58,12 +58,18 @@ public class Controlador {
         return "redirect:/verVideo";
     }
 
-    public String EliminarReserva() {
-        return "";
+    @GetMapping("/EliminarReserva/{idreservas}")
+    public String EliminarReserva(Reserva reserva) {
+        reservaS.eliminar(reserva);
+        return "redirect:/verVideo";
+
     }
 
-    public String ModificarReserva() {
-        return "";
+    @GetMapping("/EditarReserva{idreservas}")
+    public String EditarReserva(Reserva reserva, Model model) {
+        reserva = reservaS.encontrarReserva(reserva);
+        model.addAttribute("reserva", reserva);
+        return "verVideo";
     }
 
     /* Trabajadores Endpoint */
@@ -81,12 +87,17 @@ public class Controlador {
 
     }
 
-    public String EliminarTrabajador() {
-        return "";
+    @GetMapping("/EliminarTrabajador/{idpersonal}")
+    public String EliminarTrabajador(Trabajadores trabajador) {
+        trabajadoresS.eliminar(trabajador);
+        return "redirect:/trabajadores";
 
     }
 
-    public String ModificarTrabajador() {
-        return "";
+    @GetMapping("/EditarTrabajador{idpersonal}")
+    public String EditarReserva(Trabajadores trabajador, Model model) {
+        trabajador = trabajadoresS.encontrarTrabajadores(trabajador);
+        model.addAttribute("trabajadores", trabajador);
+        return "Trabajadres";
     }
 }

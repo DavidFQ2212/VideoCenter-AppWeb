@@ -78,9 +78,9 @@
             </form>
         </div>
 
-        <div class="table-container">
+        <div class="table-container" th:if="${empleados != null and !empleados.empty}">
             <h2>Pedidos</h2>
-            <table border="1" th:if="${empleados != null and !empleados.empty}">
+            <table border=" 1">
                 <tr>
                     <th>NunmeroTrabajador</th>
                     <th>Nombre</th>
@@ -97,8 +97,8 @@
                     <td th:text="${trabajador.apellido}"></td>
                     <td th:text="${trabajador.rfc}"></td>
                     <td th:text="${trabajador.fecha_ingreso}"></td>
-                    <td><a th:href="@{/}">Eliminar</a></td>
-                    <td><a th:href="@{/}">Editar</a></td>
+                    <td><a th:href="@{/EliminarTrabajador/} + ${trabajador.idpersonal}">Eliminar</a></td>
+                    <td><a th:href="@{/EditarTrabajador} + ${trabajador.idpersonal}">Editar</a></td>
 
                 </tr>
                 <!-- Puedes agregar más filas de datos aquí -->

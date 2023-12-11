@@ -62,12 +62,35 @@
 
                 <label for="titulo" class="form-label">Título:</label>
                 <select name="titulo" id="titlo" class="form-itemsIn" th:field="*{titulo}">
-                    <option value="PElicula1">pelicula 1</option>
+                    <option value="El Caballero de la Noche (2008)">El Caballero de la Noche (2008)</option>
+                    <option value="Origen (2010)">Origen (2010)</option>
+                    <option value="La Red Social (2010)">La Red Social (2010)</option>
+                    <option value="La La Land (2016)">La La Land (2016)</option>
+                    <option value="Mad Max: Furia en el Camino (2015)">Mad Max: Furia en el Camino (2015)</option>
+                    <option value="La Forma del Agua (2017)">La Forma del Agua (2017)</option>
+                    <option value="El Gran Hotel Budapest (2014)">El Gran Hotel Budapest (2014)</option>
+                    <option value="Birdman (2014)">Birdman (2014)</option>
+                    <option value="Whiplash (2014)">Whiplash (2014)</option>
+                    <option value="Gravedad (2013)">Gravedad (2013)</option>
+                    <option value="El Renacido (2015)">El Renacido (2015)</option>
+                    <option value="Django sin Cadenas (2012)">Django sin Cadenas (2012)</option>
+                    <option value="Interstellar (2014)">Interstellar (2014)</option>
+                    <option value="Moonlight (2016)">Moonlight (2016)</option>
+                    <option value="El Lobo de Wall Street (2013)">El Lobo de Wall Street (2013)</option>
+                    <option value="Avatar (2009)">Avatar (2009)</option>
+                    <option value="El Discurso del Rey (2010)">El Discurso del Rey (2010)</option>
+                    <option value="Sin Lugar para los Débiles (2007)<">Sin Lugar para los Débiles (2007)</option>
+                    <option value="Expiación (2007)">Expiación (2007)</option>
+                    <option value="Infiltrados (2006)">Infiltrados (2006)</option>
                 </select>
 
                 <label for="numtrabajador" class="form-label">N.trabajador</label>
                 <select name="idpersonal" id="idpersonal" class="form-itemsIn" th:field="*{idpersonal}">
-                    <option value="1" class="form-itemsIn">asdasda</option>
+                    <option value="1">Alejandra Mendoza</option>
+                    <option value="2">Héctor Ramírez</option>
+                    <option value="3">Valentina Gutiérrez</option>
+                    <option value="4">Roberto Salazar</option>
+                    <option value="5">Isabella Vargas</option>
                 </select>
 
 
@@ -110,8 +133,8 @@
                     <td th:text="${reserva.fechaprestamo}"></td>
                     <td th:text="${reserva.fechadevolucion}"></td>
                     <td th:text="${reserva.precio}"></td>
-                    <td><a th:href="@{/}">Eliminar</a></td>
-                    <td><a th:href="@{/}">Editar</a></td>
+                    <td><a th:href="@{/EliminarReserva/} + ${reserva.idreservas}">Eliminar</a></td>
+                    <td><a th:href="@{/EditarReserva} + ${reserva.idreservas}">Editar</a></td>
                 </tr>
                 <!-- Puedes agregar más filas de datos aquí -->
             </table>
